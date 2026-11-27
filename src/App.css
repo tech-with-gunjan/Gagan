@@ -1,0 +1,500 @@
+/* Select every element. */
+* {
+
+  /* Include padding and border inside width calculations. */
+  box-sizing: border-box;
+}
+
+
+/* Style the complete webpage. */
+body {
+
+  /* Remove default browser spacing. */
+  margin: 0;
+
+  /* Set the application font. */
+  font-family: Arial, sans-serif;
+}
+
+
+/* Main application container. */
+.app {
+
+  /* Make the application cover the full screen height. */
+  min-height: 100vh;
+
+  /* Add space around the content. */
+  padding: 30px;
+
+  /* Light mode background color. */
+  background: #f0f2f5;
+
+  /* Light mode text color. */
+  color: #222;
+
+  /* Smooth transition when changing themes. */
+  transition: 0.3s;
+}
+
+
+/* Dark Mode styles. */
+.app.dark {
+
+  /* Dark background for Night Mode. */
+  background: #121212;
+
+  /* Light text for Night Mode. */
+  color: white;
+}
+
+
+/* Main container. */
+.main-container {
+
+  /* Limit the maximum width. */
+  max-width: 950px;
+
+  /* Center the container horizontally. */
+  margin: auto;
+}
+
+
+/* Top bar containing title and theme button. */
+.top-bar {
+
+  /* Use Flexbox. */
+  display: flex;
+
+  /* Place title and button at opposite sides. */
+  justify-content: space-between;
+
+  /* Align items vertically. */
+  align-items: center;
+
+  /* Add space below the top bar. */
+  margin-bottom: 25px;
+}
+
+
+/* Calculator title. */
+.top-bar h1 {
+
+  /* Remove default margin. */
+  margin: 0;
+}
+
+
+/* Theme toggle button. */
+.theme-button {
+
+  /* Allow the width to fit the content. */
+  width: auto;
+
+  /* Add horizontal and vertical padding. */
+  padding: 10px 18px;
+
+  /* Set background color. */
+  background: #333;
+
+  /* Set text color. */
+  color: white;
+}
+
+
+/* Container containing calculator and history. */
+.content-container {
+
+  /* Use Flexbox. */
+  display: flex;
+
+  /* Add space between calculator and history. */
+  gap: 25px;
+
+  /* Align both sections at the top. */
+  align-items: flex-start;
+}
+
+
+/* Calculator container. */
+.calculator {
+
+  /* Give the calculator flexible width. */
+  flex: 1;
+
+  /* Set maximum width. */
+  max-width: 400px;
+
+  /* Add internal spacing. */
+  padding: 20px;
+
+  /* Light calculator background. */
+  background: white;
+
+  /* Round corners. */
+  border-radius: 20px;
+
+  /* Add shadow. */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  /* Smooth transition between themes. */
+  transition: 0.3s;
+}
+
+
+/* Dark Mode calculator styling. */
+.app.dark .calculator {
+
+  /* Dark calculator background. */
+  background: #1f1f1f;
+
+  /* Add a darker shadow. */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Calculator display. */
+.display {
+
+  /* Take full calculator width. */
+  width: 100%;
+
+  /* Set display height. */
+  height: 70px;
+
+  /* Add space below display. */
+  margin-bottom: 20px;
+
+  /* Add internal spacing. */
+  padding: 15px;
+
+  /* Remove default border. */
+  border: none;
+
+  /* Round corners. */
+  border-radius: 12px;
+
+  /* Light display background. */
+  background: #f3f3f3;
+
+  /* Set text size. */
+  font-size: 28px;
+
+  /* Align text to the right. */
+  text-align: right;
+
+  /* Set text color. */
+  color: #222;
+}
+
+
+/* Dark Mode display. */
+.app.dark .display {
+
+  /* Dark display background. */
+  background: #333;
+
+  /* Light text color. */
+  color: white;
+}
+
+
+/* Buttons container. */
+.buttons {
+
+  /* Enable Grid layout. */
+  display: grid;
+
+  /* Create four equal columns. */
+  grid-template-columns: repeat(4, 1fr);
+
+  /* Add spacing between buttons. */
+  gap: 12px;
+}
+
+
+/* Style all calculator buttons. */
+button {
+
+  /* Set button height. */
+  height: 60px;
+
+  /* Remove default border. */
+  border: none;
+
+  /* Round corners. */
+  border-radius: 12px;
+
+  /* Default button background. */
+  background: #e0e0e0;
+
+  /* Default text color. */
+  color: #222;
+
+  /* Set text size. */
+  font-size: 20px;
+
+  /* Show pointer cursor. */
+  cursor: pointer;
+
+  /* Add smooth animation. */
+  transition: 0.2s;
+}
+
+
+/* Button hover effect. */
+button:hover {
+
+  /* Slightly increase button size. */
+  transform: scale(1.04);
+}
+
+
+/* Dark Mode normal buttons. */
+.app.dark button {
+
+  /* Dark button background. */
+  background: #3a3a3a;
+
+  /* White button text. */
+  color: white;
+}
+
+
+/* Operator buttons. */
+.operator {
+
+  /* Orange operator background. */
+  background: #ff9500;
+
+  /* White operator text. */
+  color: white;
+}
+
+
+/* Keep operators orange in Dark Mode. */
+.app.dark .operator {
+
+  /* Orange background. */
+  background: #ff9500;
+
+  /* White text. */
+  color: white;
+}
+
+
+/* Equals button. */
+.equal {
+
+  /* Green background. */
+  background: #34c759;
+
+  /* White text. */
+  color: white;
+}
+
+
+/* Keep equals button green in Dark Mode. */
+.app.dark .equal {
+
+  /* Green background. */
+  background: #34c759;
+
+  /* White text. */
+  color: white;
+}
+
+
+/* Zero button. */
+.zero {
+
+  /* Make zero occupy two columns. */
+  grid-column: span 2;
+}
+
+
+/* History panel. */
+.history-panel {
+
+  /* Allow history panel to grow. */
+  flex: 1;
+
+  /* Add internal spacing. */
+  padding: 20px;
+
+  /* Minimum height of the history panel. */
+  min-height: 300px;
+
+  /* Light background. */
+  background: white;
+
+  /* Rounded corners. */
+  border-radius: 20px;
+
+  /* Add shadow. */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  /* Smooth theme transition. */
+  transition: 0.3s;
+}
+
+
+/* Dark Mode history panel. */
+.app.dark .history-panel {
+
+  /* Dark background. */
+  background: #1f1f1f;
+}
+
+
+/* History heading section. */
+.history-header {
+
+  /* Use Flexbox. */
+  display: flex;
+
+  /* Place heading and button at opposite sides. */
+  justify-content: space-between;
+
+  /* Align vertically. */
+  align-items: center;
+
+  /* Add space below. */
+  margin-bottom: 20px;
+}
+
+
+/* History heading. */
+.history-header h2 {
+
+  /* Remove default margin. */
+  margin: 0;
+}
+
+
+/* Clear History button. */
+.clear-history {
+
+  /* Automatic width based on content. */
+  width: auto;
+
+  /* Smaller height than calculator buttons. */
+  height: auto;
+
+  /* Add padding. */
+  padding: 8px 12px;
+
+  /* Red background. */
+  background: #ff4d4d;
+
+  /* White text. */
+  color: white;
+
+  /* Smaller text size. */
+  font-size: 14px;
+}
+
+
+/* Keep clear button red in Dark Mode. */
+.app.dark .clear-history {
+
+  /* Red background. */
+  background: #ff4d4d;
+
+  /* White text. */
+  color: white;
+}
+
+
+/* Empty history message. */
+.empty-history {
+
+  /* Set text color. */
+  color: #888;
+
+  /* Center the text. */
+  text-align: center;
+
+  /* Add top spacing. */
+  margin-top: 50px;
+}
+
+
+/* Container for history items. */
+.history-list {
+
+  /* Limit history height. */
+  max-height: 350px;
+
+  /* Add vertical scrolling when needed. */
+  overflow-y: auto;
+}
+
+
+/* Individual history calculation. */
+.history-item {
+
+  /* Add internal spacing. */
+  padding: 12px;
+
+  /* Add space below each item. */
+  margin-bottom: 10px;
+
+  /* Light background. */
+  background: #f3f3f3;
+
+  /* Round corners. */
+  border-radius: 10px;
+
+  /* Break long calculations if needed. */
+  word-break: break-word;
+}
+
+
+/* Dark Mode history items. */
+.app.dark .history-item {
+
+  /* Darker item background. */
+  background: #333;
+}
+
+
+/* Responsive design for smaller screens. */
+@media (max-width: 700px) {
+
+  /* Stack calculator and history vertically. */
+  .content-container {
+
+    /* Change layout direction to vertical. */
+    flex-direction: column;
+  }
+
+
+  /* Make calculator use full width. */
+  .calculator {
+
+    /* Use the complete available width. */
+    width: 100%;
+
+    /* Remove maximum width restriction. */
+    max-width: none;
+  }
+
+
+  /* Make history use full width. */
+  .history-panel {
+
+    /* Use the complete available width. */
+    width: 100%;
+  }
+
+
+  /* Adjust top bar for smaller screens. */
+  .top-bar {
+
+    /* Stack title and theme button vertically. */
+    flex-direction: column;
+
+    /* Add spacing between them. */
+    gap: 15px;
+  }
+}

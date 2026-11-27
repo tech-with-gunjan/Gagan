@@ -1,0 +1,14 @@
+/* Remove default browser margin. */
+body {
+
+  /* Remove outside spacing. */
+  margin: 0;
+}
+
+
+/* Apply border-box sizing to every element. */
+* {
+
+  /* Include padding and borders inside element dimensions. */
+  box-sizing: border-box;
+}
